@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum sex: { man: 0, woman: 1, other: 2 }
-  enum role: { recruiter: 0, applicant: 1 }
+  # enum sex: { man: 0, woman: 1, other: 2 }
+  # enum role: { recruiter: 0, applicant: 1 }
 end

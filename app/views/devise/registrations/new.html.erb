@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -30,8 +30,7 @@
 
   <div class="field">
     <%= f.label :性別 %><br />
-    <%= form_with model: user, local: true do |f|
-    <%= f.select :sex, class: [["男性", 0],["女性", 1],["答えたくない", 2]] %>
+    <%= f.select :sex, {"男性": 0, "女性": 1, "答えたくない": 2}, { include_blank: "選択してください"} %>
 
   <div class="field">
     <%= f.label :職業 %><br />
@@ -39,8 +38,7 @@
     
   <div class="field">
     <%= f.label :権限種別 %><br />
-    <%= form_with model: user, local: true do |f|
-    <%= f.select :sex, class: [["里親募集主", 0],["譲渡希望者," 1]] %>
+    <%= f.select :role, {"里親募集主": 0, "譲渡希望者": 1}, { include_blank: "選択してください"} %>
 
   <div class="field">
     <%= f.label :password %>
